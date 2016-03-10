@@ -1,0 +1,79 @@
+<head>
+  <title>Course Details</title>
+</head>
+
+<body>
+  <h1>Course Details</h1>
+
+  {{> itemList}}
+</body>
+
+<template name="itemList">
+  <p></p>
+  <table>
+    
+      <tr>
+        <th> &nbsp; Course Name</th>      
+        <th> &nbsp; Branch</th>
+        <th> &nbsp;  School / College Name</th>
+        <th> &nbsp;  Passing Year</th>
+        <th> &nbsp;  Percentile Score / Grade</th>
+        
+        <th></th>
+      </tr>
+    
+    <tbody>  
+    {{#each items}}
+      {{> item}}
+    {{/each}}
+    </tbody>
+  </table>
+  {{> addItem}}
+</template>
+<template name="item">
+
+  <tr>
+    <td>&nbsp; {{Course_Name}}</td>
+    <td>&nbsp; {{Branch}}</td>
+    <td>&nbsp; {{collname}}</td>
+    <td>&nbsp; {{Passing_Year}}</td>
+    <td>&nbsp; {{Percentile_ScoreGrade}}</td>
+    
+    <td><button class="deleteItem">Delete</button></td>
+  </tr>
+
+</template>
+<template name="addItem">      
+  <form id="addItemForm" name="contact_form" class="contact_form">
+  <ul>
+  <li>
+  <br><br>
+  <h2>
+  Details</h2>
+  </li>
+  <li>
+
+    <label for="Course_Name">Course_Name:</label>
+    <input type="text" id="Course_Name">
+	</li>
+	<li>
+    <label for="Branch">Branch:</label>
+    <input type="text" id="Branch">
+	</li>
+	<li>
+    <label for="collname">School College Name</label>
+    <input type="text" id="collname">
+	</li>
+	<li>
+    <label for="Passing_Year">Passing Year</label>
+    <input type="text" id="Passing_Year">
+	</li>
+	<li>
+    <label for="grade">Percentile Score / Grade</label>
+    <input type="text" id="grade">
+    </li>
+	</ul>
+	<br><br>
+    <input type="submit" id="addNewItem" value="Submit">
+  </form>
+</template>
